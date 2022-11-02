@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --font-color: black;
+    --background-color: rgb(242, 242, 242);
+    --background-color-sd: white;
+    --font-family: 'Nunito';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme='dark'] {
+    --font-color: white;
+    --background-color-sd: rgb(51 65 85);
+    --background-color: rgb(43, 56, 68);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    color: var(--font-color);
+    background-color: var(--background-color);
+    font-family: var(--font-family);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+    background-color: var(--background-color);
 }
 
-.App-link {
-  color: #61dafb;
+header {
+    background-color: var(--background-color-sd);
 }
 
-@keyframes App-logo-spin {
-  from {
+.dropdown, .region-button, .region-select, .search-bar, input, .region {
+    background-color: var(--background-color-sd);
+}
+
+.arrow-init {
     transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.arrow-down {
+    transform: rotate(90deg);
+}
+
+.arrow-init, .arrow-down {
+    transition: all .2s ease;
+
+}
+
+.item-region:hover {
+    cursor: pointer;
 }
